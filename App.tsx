@@ -12,59 +12,26 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import PokemonsScreen from './src/screens/PokemonsScreen';
+import PokemonDetailScreen from './src/screens/PokemonDetailScreen';
+import UpdatePokemonScreen from './src/screens/UpdatePokemonScreen';
+import CreatePokemonScreen from './src/screens/CreatePokemonScreen';
+
+const Stack = createStackNavigator();
 
 function App() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1 }}>
-        <View
-          style={{
-            backgroundColor: '#333',
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <ScrollView
-            style={styles.container}
-            contentContainerStyle={{
-              backgroundColor: 'pink',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Text style={styles.title}>Hello world</Text>
-            <Image
-              style={{ height: 100, width: 100 }}
-              source={{
-                uri: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTljTEC7O8OjiuyjE__jmWhoC1yqk9AqnDtd2SEyFB6ZotrdyB57kl-zdzo2hUg0RP4DR1AQCqmfxsVjeFdK_bcVw',
-              }}
-            />
-            <TextInput
-              style={{ backgroundColor: 'white', height: 50, width: '100%' }}
-              placeholder="useless placeholder"
-              keyboardType="numeric"
-            />
-            <Pressable onPress={() => console.log('Pressable Pressed')}>
-              <Text>I'm pressable!</Text>
-            </Pressable>
-
-            <Button
-              onPress={() => console.log('Button Pressed')}
-              title="Learn More"
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
-
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => console.log('TouchableOpacity Pressed')}
-            >
-              <Text>Press Here</Text>
-            </TouchableOpacity>
-          </ScrollView>
-        </View>
-      </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Pokemons">
+          <Stack.Screen name="Pokemons" component={PokemonsScreen} />
+          <Stack.Screen name="PokemonDetail" component={PokemonDetailScreen} />
+          <Stack.Screen name="UpdatePokemon" component={UpdatePokemonScreen} />
+          <Stack.Screen name="CreatePokemon" component={CreatePokemonScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }

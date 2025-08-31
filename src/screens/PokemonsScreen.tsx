@@ -13,7 +13,9 @@ import PokemonButton from '../components/PokemonButton';
 function PokemonsScreen() {
   const navigation = useNavigation();
 
-  console.log('navigation', navigation);
+  const onPressHandler = () => {
+    navigation.navigate('CreatePokemon' as never);
+  };
 
   return (
     <View style={styles.container}>
@@ -40,7 +42,7 @@ function PokemonsScreen() {
           </TouchableOpacity>
         </View>
       </ScrollView>
-      <PokemonButton />
+      <PokemonButton onPressHandler={onPressHandler} />
     </View>
   );
 }

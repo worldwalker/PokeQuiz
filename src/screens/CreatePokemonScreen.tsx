@@ -11,13 +11,18 @@ import PokemonButton from '../components/PokemonButton';
 
 function CreatePokemonScreen() {
   const navigation = useNavigation();
+
+  const onPressHandler = () => {
+    navigation.goBack();
+  };
+
   return (
     <View style={styles.container}>
       <PokemonCreteInput title="Pokemon description" />
       <PokemonCreteInput title="Pokemon image URL" />
       <PokemonCreteInput title="Pokemon name" />
 
-      <PokemonButton />
+      <PokemonButton onPressHandler={onPressHandler} />
     </View>
   );
 }

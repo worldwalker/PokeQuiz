@@ -1,14 +1,13 @@
-import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-function PokemonButton() {
-  const navigation = useNavigation();
+type PokemonButtonProps = {
+  onPressHandler: () => void;
+};
+function PokemonButton(props: PokemonButtonProps) {
   return (
     <TouchableOpacity
       style={styles.addPokemonButton}
-      onPress={() => {
-        navigation.navigate('CreatePokemon' as never);
-      }}
+      onPress={props.onPressHandler}
     >
       <Text style={styles.createText}>Create Pokemon</Text>
     </TouchableOpacity>

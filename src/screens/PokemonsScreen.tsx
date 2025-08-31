@@ -45,7 +45,7 @@ function PokemonsScreen() {
           navigation.navigate('CreatePokemon' as never);
         }}
       >
-        <Text>Create Pokemon</Text>
+        <Text style={styles.createText}>Create Pokemon</Text>
       </TouchableOpacity>
     </View>
   );
@@ -73,9 +73,13 @@ const styles = StyleSheet.create({
   addPokemonButton: {
     width: '100%',
     backgroundColor: 'green',
-    padding: 10,
+    padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  createText: {
+    color: 'white',
+    fontSize: 14,
   },
 });
 

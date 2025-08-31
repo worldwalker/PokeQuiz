@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import {
   ImageBackground,
   StyleSheet,
@@ -7,9 +8,15 @@ import {
 } from 'react-native';
 
 function PokemonCard() {
+  const navigation = useNavigation();
+
+  const navHandler = () => {
+    navigation.navigate('PokemonDetail' as never);
+  };
+
   return (
     <View style={{ width: '48%', aspectRatio: 1 }}>
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity style={styles.card} onPress={navHandler}>
         <ImageBackground
           source={{
             uri: 'https://assets.puzzlefactory.com/puzzle/254/191/original.jpg',

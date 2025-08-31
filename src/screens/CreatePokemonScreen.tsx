@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import PokemonCreteInput from '../components/PokemonCreateInput';
+import PokemonButton from '../components/PokemonButton';
 
 function CreatePokemonScreen() {
   const navigation = useNavigation();
@@ -16,9 +17,7 @@ function CreatePokemonScreen() {
       <PokemonCreteInput title="Pokemon image URL" />
       <PokemonCreteInput title="Pokemon name" />
 
-      <TouchableOpacity style={styles.saveButton} onPress={() => {}}>
-        <Text style={styles.createText}>Create Pokemon</Text>
-      </TouchableOpacity>
+      <PokemonButton />
     </View>
   );
 }

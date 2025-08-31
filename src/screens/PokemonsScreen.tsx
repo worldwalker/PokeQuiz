@@ -8,6 +8,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import PokemonCard from '../components/PokemonCard';
+import PokemonButton from '../components/PokemonButton';
 
 function PokemonsScreen() {
   const navigation = useNavigation();
@@ -39,14 +40,7 @@ function PokemonsScreen() {
           </TouchableOpacity>
         </View>
       </ScrollView>
-      <TouchableOpacity
-        style={styles.addPokemonButton}
-        onPress={() => {
-          navigation.navigate('CreatePokemon' as never);
-        }}
-      >
-        <Text style={styles.createText}>Create Pokemon</Text>
-      </TouchableOpacity>
+      <PokemonButton />
     </View>
   );
 }

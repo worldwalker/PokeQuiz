@@ -25,12 +25,23 @@ function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Pokemons">
-          <Stack.Screen name="Pokemons" component={PokemonsScreen} />
-          <Stack.Screen name="PokemonDetail" component={PokemonDetailScreen} />
-          <Stack.Screen name="UpdatePokemon" component={UpdatePokemonScreen} />
-          <Stack.Screen name="CreatePokemon" component={CreatePokemonScreen} />
-        </Stack.Navigator>
+        <SafeAreaView style={{ flex: 1 }} edges={['bottom']}>
+          <Stack.Navigator initialRouteName="Pokemons">
+            <Stack.Screen name="Pokemons" component={PokemonsScreen} />
+            <Stack.Screen
+              name="PokemonDetail"
+              component={PokemonDetailScreen}
+            />
+            <Stack.Screen
+              name="UpdatePokemon"
+              component={UpdatePokemonScreen}
+            />
+            <Stack.Screen
+              name="CreatePokemon"
+              component={CreatePokemonScreen}
+            />
+          </Stack.Navigator>
+        </SafeAreaView>
       </NavigationContainer>
     </SafeAreaProvider>
   );

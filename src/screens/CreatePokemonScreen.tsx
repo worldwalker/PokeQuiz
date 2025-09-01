@@ -18,9 +18,18 @@ function CreatePokemonScreen() {
 
   return (
     <View style={styles.container}>
-      <PokemonCreteInput title="Pokemon description" />
-      <PokemonCreteInput title="Pokemon image URL" />
-      <PokemonCreteInput title="Pokemon name" />
+      <PokemonCreteInput
+        title="Pokemon description"
+        placeholder="Describe your Pokemon"
+      />
+      <PokemonCreteInput
+        title="Pokemon image URL"
+        placeholder="Enter image URL of your Pokemon"
+      />
+      <PokemonCreteInput
+        title="Pokemon name"
+        placeholder="Name of the Pokemon"
+      />
 
       <PokemonButton
         title="Create Pokemon"

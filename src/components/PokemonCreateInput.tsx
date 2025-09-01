@@ -2,16 +2,17 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 type PokemonCreteInput = {
   title: string;
+  placeholder: string;
 };
 function PokemonCreteInput(props: PokemonCreteInput) {
-  console.log('PokemonCreteInput props', props);
+  const { title, placeholder } = props;
 
   return (
     <View style={styles.inputContainer}>
-      <Text style={styles.title}>{props.title}</Text>
+      <Text style={styles.title}>{title}</Text>
       <TextInput
         multiline={true}
-        placeholder={props.title}
+        placeholder={props.placeholder}
         placeholderTextColor={'#333'}
         style={styles.input}
       />

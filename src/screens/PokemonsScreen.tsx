@@ -42,7 +42,11 @@ function PokemonsScreen() {
           </TouchableOpacity>
         </View>
       </ScrollView>
-      <PokemonButton onPressHandler={onPressHandler} />
+      <PokemonButton
+        title="Create Pokemon"
+        style={{ backgroundColor: 'green' }}
+        onPressHandler={onPressHandler}
+      />
     </View>
   );
 }

@@ -1,15 +1,19 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 type PokemonButtonProps = {
+  title: string;
+  style?: any;
+  textStyles?: any;
   onPressHandler: () => void;
 };
 function PokemonButton(props: PokemonButtonProps) {
+  const { title, style = {}, textStyles = {}, onPressHandler } = props;
   return (
     <TouchableOpacity
-      style={styles.addPokemonButton}
-      onPress={props.onPressHandler}
+      style={[styles.addPokemonButton, style]}
+      onPress={onPressHandler}
     >
-      <Text style={styles.createText}>Create Pokemon</Text>
+      <Text style={[styles.createText, textStyles]}>{title}</Text>
     </TouchableOpacity>
   );
 }

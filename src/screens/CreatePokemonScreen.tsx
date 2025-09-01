@@ -22,7 +22,11 @@ function CreatePokemonScreen() {
       <PokemonCreteInput title="Pokemon image URL" />
       <PokemonCreteInput title="Pokemon name" />
 
-      <PokemonButton onPressHandler={onPressHandler} />
+      <PokemonButton
+        title="Create Pokemon"
+        style={{ backgroundColor: 'green' }}
+        onPressHandler={onPressHandler}
+      />
     </View>
   );
 }

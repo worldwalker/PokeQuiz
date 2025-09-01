@@ -25,8 +25,17 @@ function PokemonsScreen() {
           flexDirection: 'row',
           flexWrap: 'wrap',
           gap: 10,
+          paddingBottom: 20,
         }}
       >
+        <PokemonCard />
+        <PokemonCard />
+        <PokemonCard />
+        <PokemonCard />
+        <PokemonCard />
+        <PokemonCard />
+        <PokemonCard />
+        <PokemonCard />
         <PokemonCard />
         <PokemonCard />
         <PokemonCard />

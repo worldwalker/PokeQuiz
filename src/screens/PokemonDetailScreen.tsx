@@ -10,6 +10,10 @@ function PokemonDetailScreen() {
     navigation.goBack();
   };
 
+  const updateButtonHandler = () => {
+    navigation.navigate('UpdatePokemon' as never);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.flipCardContainer}>
@@ -24,7 +28,7 @@ function PokemonDetailScreen() {
         <PokemonButton
           title="Update"
           style={{ backgroundColor: 'blue' }}
-          onPressHandler={onPressHandler}
+          onPressHandler={updateButtonHandler}
         />
       </View>
     </View>
